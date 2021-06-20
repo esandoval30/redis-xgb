@@ -24,6 +24,9 @@ You will need:
     ```
 * A virtualenv with Python 3.7
     * Activate your virtualenv 
+    ```
+    source <virtualenvfolder>/bin/activate
+    ```
     * install all required python packages with 
     ```
     pip install -r requirements.txt
