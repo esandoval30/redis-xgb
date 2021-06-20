@@ -15,7 +15,8 @@ This repo contains:
 * A TorchScript providing feature processing functions to transform all numerical and categorical features into Tensors
 
 
-## BEFORE YOU START. You will need:
+## BEFORE YOU START. 
+You will need:
 * A Redis Server with RedisAI module loaded running on localhost:6349
     * Note: You could use the Dockerfile to create a container image with 
     ``` 
@@ -29,7 +30,7 @@ This repo contains:
     ```
 * redis-cli
 
-# 1. Start the RedisAI Server (container)
+# 1. Start the RedisAI Server (or container)
 if you used docker build, grab the container image id and run
 ```
 docker run -p 127.0.0.1:6379:6379/tcp -i -t <imageid>
@@ -37,10 +38,10 @@ docker run -p 127.0.0.1:6379:6379/tcp -i -t <imageid>
 
 You can get the image id with docker 
 ```
-run images
+docker images
 ```
 
-# 2. Explore (And Run ALl cells) in the notebook
+# 2. Explore (And Run All cells) in the notebook
 ```
 jupyter notebook loan-approval-xgboost-final.ipynb
 ```
@@ -62,7 +63,7 @@ After you run all cells, you will have:
     * loan-application-1424
     * loan-application-1400
 
-You will use the model to get predictions on likelihood to be accepted for any of the above
+You will use the model to get predictions on likelihood to be approved for any of the above loans
 
 # 3. Load Feature Processing TorchScript as a RedisAI script
 
