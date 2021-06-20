@@ -50,10 +50,12 @@ jupyter notebook loan-approval-xgboost-final.ipynb
 ```
 
 After you run all cells, you will have:
+* Trained the XGB Model on a subset of the original dataset
+* Converted the XGBModel into ONNX
+* Generated the same predictions with both XGBModel and the ONNX Model
 * Bootstrapped 2 tensors (AI.TENSORSET) required to normalize all numerical features
     * xgb-loan-approval-numeric-features-mean
     * xgb-loan-approval-numeric-features-std
-
 * Loaded 10 "loan applications" as Redis hashes
     * loan-application-855
     * loan-application-2561
