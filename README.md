@@ -15,7 +15,7 @@ This repo contains:
 * A TorchScript providing feature processing functions to transform all numerical and categorical features into Tensors
 
 
-## BEFORE YOU START. 
+## Before You Start
 You will need:
 * A Redis Server with RedisAI module loaded running on localhost:6349
     * Note: You could use the Dockerfile to create a container image with 
@@ -84,19 +84,19 @@ From Terminal
 redis-cli
 ```
 
-Once You could try the following commands
-## 5.1 Script to normalize numerical features into tensors
+From the redis-cli, You could try the following Redis AI commands:
+## 5.1 Script to normalize numerical features into a tensor
 ```
 AI.SCRIPTEXECUTE xgb-loan-approval-feature-processing numeric_values_to_tensors KEYS 1 loan-application-855 INPUTS 3 loan-application-855 xgb-loan-approval-numeric-features-mean xgb-loan-approval-numeric-features-std OUTPUTS 1 loan-application-855-numeric-tensor
 ```
 You could AI.TENSORGET loan-application-855-numeric-tensor to check the resulting tensor!
-## 5.2 Script to 1-hot-encode categorical features
+## 5.2 Script to 1-hot-encode categorical features into a tensor
 ```
 AI.SCRIPTEXECUTE xgb-loan-approval-feature-processing categorical_values_to_tensors KEYS 1 loan-application-855 INPUTS 1 loan-application-855 OUTPUTS 1 loan-application-855-categorical-tensor
 ```
 You could AI.TENSORGET loan-application-855-categorical-tensor to check the resulting tensor!
 
-## 5.3 Script to pre-process all features in one go
+## 5.3 Script to pre-process all features into a single tensor
 ```
 AI.SCRIPTEXECUTE xgb-loan-approval-feature-processing pre_process KEYS 1 loan-application-855 INPUTS 3 loan-application-855 xgb-loan-approval-numeric-features-mean xgb-loan-approval-numeric-features-std OUTPUTS 1 loan-application-855-featurized-data
 ```
