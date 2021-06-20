@@ -1,7 +1,7 @@
 # A simple XGBoost Model in RedisAI
 
 This repo contains:
-* A fake loan applications dataset (loan-applications.csv). Dataset contains
+* A fake loan applications dataset (loan-applications.csv). Dataset contains 4499 "records"
     *  8 numerical columns
     *  10 categorical columns
     *  1 target (column to be predicted) with the following values: 
