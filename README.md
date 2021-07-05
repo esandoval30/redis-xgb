@@ -90,24 +90,24 @@ redis-cli
 ```
 
 From the redis-cli, You could try the following Redis AI commands:
-## 5.1 Script to normalize numerical features into a tensor
+## 5.1 Execture Script to normalize numerical features into a tensor
 ```
 AI.SCRIPTEXECUTE xgb-loan-approval-feature-processing numeric_values_to_tensors KEYS 1 loan-application-855 INPUTS 3 loan-application-855 xgb-loan-approval-numeric-features-mean xgb-loan-approval-numeric-features-std OUTPUTS 1 loan-application-855-numeric-tensor
 ```
 You could AI.TENSORGET loan-application-855-numeric-tensor to check the resulting tensor!
-## 5.2 Script to 1-hot-encode categorical features into a tensor
+## 5.2 Execute Script to 1-hot-encode categorical features into a tensor
 ```
 AI.SCRIPTEXECUTE xgb-loan-approval-feature-processing categorical_values_to_tensors KEYS 1 loan-application-855 INPUTS 1 loan-application-855 OUTPUTS 1 loan-application-855-categorical-tensor
 ```
 You could AI.TENSORGET loan-application-855-categorical-tensor to check the resulting tensor!
 
-## 5.3 Script to pre-process all features into a single tensor
+## 5.3 Executue Script to pre-process all features into a single tensor
 ```
 AI.SCRIPTEXECUTE xgb-loan-approval-feature-processing pre_process KEYS 1 loan-application-855 INPUTS 3 loan-application-855 xgb-loan-approval-numeric-features-mean xgb-loan-approval-numeric-features-std OUTPUTS 1 loan-application-855-featurized-data
 ```
 You could AI.TENSORGET loan-application-855-featurized-data to check the resulting tensor!
 
-## 5.4 You could get a prediction from the Model
+## 5.4 Get a prediction from the Model
 ```
 AI.MODELEXECUTE xgb-loan-application-model INPUTS 1 loan-application-855-featurized-data OUTPUTS 2 loan-application-855-label loan-application-855-probabilities
 ```
